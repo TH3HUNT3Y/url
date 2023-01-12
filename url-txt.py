@@ -13,6 +13,12 @@ def is_valid_url(url):
     else:
         return False
 
-# Example usage
-print(is_valid_url("http://www.example.com")) # prints True
-print(is_valid_url("example.com")) # prints False
+# Open the text file containing the URLs
+with open("urls.txt", "r") as file:
+    # Read each line in the file
+    for line in file:
+        # Strip leading/trailing whitespace and newline characters
+        url = line.strip()
+
+        # Print the result of the is_valid_url() function
+        print(f"{url}: {is_valid_url(url)}")
